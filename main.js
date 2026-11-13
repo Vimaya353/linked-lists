@@ -10,29 +10,20 @@ list.append("snake");
 list.append("turtle");
 
 console.log(list.toString());
+// ( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( snake ) -> ( turtle ) -> null
 
-console.log(list.size());             // 6
-console.log(list.head());             // dog
-console.log(list.tail());             // turtle
-console.log(list.at(2));              // parrot
-console.log(list.at(99));             // undefined
-console.log(list.contains("cat"));    // true
-console.log(list.contains("lion"));   // false
-console.log(list.findIndex("snake")); // 4
-console.log(list.findIndex("lion"));  // -1
-
-console.log(list.pop());              // dog
-console.log(list.toString());         // ( cat ) -> ( parrot ) -> ...
-
+// A few extra checks
 list.prepend("fish");
-list.insertAt(1, "a", "b");
-console.log(list.toString());         // ( fish ) -> ( a ) -> ( b ) -> ( cat ) -> ...
+console.log(list.size());          // 7
+console.log(list.head());          // fish
+console.log(list.tail());          // turtle
+console.log(list.at(2));           // cat
+console.log(list.at(99));          // undefined
+console.log(list.contains("cat")); // true
+console.log(list.findIndex("snake")); // 5
+console.log(list.pop());           // fish
 
-list.removeAt(0);
-console.log(list.toString());         // ( a ) -> ( b ) -> ( cat ) -> ...
-
-try {
-  list.removeAt(99);
-} catch (e) {
-  console.log(e instanceof RangeError); // true
-}
+list.insertAt(1, "ant", "bee");
+console.log(list.toString());
+list.removeAt(1);
+console.log(list.toString());
